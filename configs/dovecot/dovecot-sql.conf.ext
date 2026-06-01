@@ -1,0 +1,7 @@
+driver = mysql
+connect = host=127.0.0.1 dbname=missioncontrol user=missioncontrol password=CHANGEME_DB_PASSWORD
+default_pass_scheme = BLF-CRYPT
+
+password_query = SELECT email AS user, CONCAT('{BLF-CRYPT}', password_hash) AS password FROM mailboxes WHERE email = '%u' AND is_active = 1
+user_query = SELECT email AS user, 5000 AS uid, 5000 AS gid, CONCAT('/var/vmail/', REPLACE(email, '@', '/')) AS home FROM mailboxes WHERE email = '%u' AND is_active = 1
+iterate_query = SELECT email AS user FROM mailboxes

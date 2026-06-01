@@ -1,0 +1,19 @@
+[Unit]
+Description=MissionControl - Mail Server Manager API
+After=network.target mariadb.service postfix.service dovecot.service
+Wants=mariadb.service
+
+[Service]
+Type=simple
+User=missioncontrol
+Group=missioncontrol
+WorkingDirectory=/opt/missioncontrol/backend
+Environment="PYTHONPATH=/opt/missioncontrol/backend"
+ExecStart=/opt/missioncontrol/backend/venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1 --log-level info
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
