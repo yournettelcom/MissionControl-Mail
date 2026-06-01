@@ -186,7 +186,7 @@ async def dns_wizard(
     if not domain_obj:
         raise HTTPException(
             status_code=404,
-            detail=f"Domínio '{domain}' não encontrado no banco de dados. Adicione-o primeiro em Domínios.",
+            detail=f"Domain '{domain}' not found in database. Add it first in Domains.",
         )
 
     expected_records = [
@@ -265,5 +265,5 @@ async def dns_wizard(
             }
             for r in expected_records
         ],
-        "message": "Registros DNS sugeridos. Configure manualmente ou forneça api_token e zone_id do Cloudflare.",
+        "message": "Suggested DNS records. Configure manually or provide api_token and zone_id from Cloudflare.",
     }

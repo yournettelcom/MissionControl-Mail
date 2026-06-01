@@ -167,12 +167,12 @@ async def update_me(
     if update.username is not None:
         existing = await db.execute(select(User).where(User.username == update.username, User.id != current_user.id))
         if existing.scalar_one_or_none():
-            raise HTTPException(status_code=409, detail="Username já está em uso")
+            raise HTTPException(status_code=409, detail="Username already in use")
         current_user.username = update.username
     if update.email is not None:
         existing = await db.execute(select(User).where(User.email == update.email, User.id != current_user.id))
         if existing.scalar_one_or_none():
-            raise HTTPException(status_code=409, detail="Email já está em uso")
+            raise HTTPException(status_code=409, detail="Email already in use")
         current_user.email = update.email
     if update.full_name is not None:
         current_user.full_name = update.full_name
