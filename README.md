@@ -1,7 +1,7 @@
 <!--
   MissionControl - Mail Server Manager
   Copyright (c) 2026 Your Net Tech
-  Developed by Jose Rinaldi
+  Developed by Jose Rinaldi (joserinaldi-l)
   All rights reserved.
   Unauthorized use, reproduction, or distribution is strictly prohibited
   without written permission from Your Net Tech.
@@ -320,6 +320,6 @@ Apache 2.0 — See [LICENSE](LICENSE) for full text.
 
 <br>
 
-<sub>Built with ❤️ for sysadmins who deserve better tools.</sub>
+<sub>Built with ❤️ by <a href="https://github.com/joserinaldi-l">José Rinaldi (joserinaldi-l)</a> — for sysadmins who deserve better tools.</sub>
 
 </div>
