@@ -103,9 +103,8 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-# Copy and edit config
-cp .env.example .env
-# Fill in DATABASE_URL, SECRET_KEY, etc.
+# Create .env with your config (deploy.sh does this automatically)
+# Required: DATABASE_URL, SECRET_KEY
 
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
@@ -140,7 +139,7 @@ backend/
 │   ├── models/       # SQLAlchemy models
 │   └── services/     # Business logic
 ├── requirements.txt
-└── .env.example
+└── .env              # Created by deploy.sh (not in repo)
 
 frontend/
 ├── assets/           # Compiled SPA (do not edit directly)
